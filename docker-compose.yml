@@ -1,6 +1,7 @@
 version: "3.5"
 services:
     yubikey-val:
+        container_name: yubikey-val
         build:
             context: .
             dockerfile: Dockerfile
@@ -16,6 +17,7 @@ services:
             TZ: ${TZ}
         networks:
             - ykval-network
+            - ykval2ksm
         ports:
             - 5004:80
     db-val:
@@ -32,4 +34,6 @@ services:
 networks:
     ykval-network:
         driver: bridge
+    ykval2ksm:
+        external: true
 
