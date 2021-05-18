@@ -1,0 +1,33 @@
+version: "3.5"
+services:
+    yubikey-val:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        restart: unless-stopped
+        environment:
+            MYSQL_HOST: ${MYSQL_VAL_HOST}
+            MYSQL_PORT: ${MYSQL_VAL_PORT}
+            MYSQL_ROOT_USER: ${MYSQL_VAL_ROOT_USER}
+            MYSQL_ROOT_PASSWORD: ${MYSQL_VAL_ROOT_PASSWORD}
+            YKVAL_VERIFIER_DB_PASSWORD: ${YKVAL_VERIFIER_DB_PASSWORD}
+            TZ: ${TZ}
+        networks:
+            - ykval-network
+        ports:
+            - 5004:80
+    db-val:
+        image: mariadb
+        restart: unless-stopped
+        environment:
+            MYSQL_ROOT_PASSWORD: ${MYSQL_VAL_ROOT_PASSWORD}
+        volumes:
+            - ./data/mysql:/var/lib/mysql
+        networks:
+            - ykval-network
+        ports:
+            - 3308:3306
+networks:
+    ykval-network:
+        driver: bridge
+

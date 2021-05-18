@@ -1,0 +1,3 @@
+[submodule "yubikey-val"]
+	path = yubikey-val
+	url = git@github.com:mksdev/yubikey-val.git

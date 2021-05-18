@@ -1,0 +1,5 @@
+RewriteEngine on
+RewriteRule ^([^/\.\?]+)(\?.*)?$ $1.php$2 [L]
+<IfModule mod_php5.c>
+    php_value include_path ".:/etc/yubico/val:/usr/share/yubikey-val"
+</IfModule>
