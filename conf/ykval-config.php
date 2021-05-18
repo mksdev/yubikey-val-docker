@@ -27,10 +27,10 @@
 # (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-$dbuser='ykval_verifier';
+$dbuser=getenv('YKVAL_VERIFIER_DB_NAME');
 $dbpass=getenv('YKVAL_VERIFIER_DB_PASSWORD');
 $basepath='';
-$dbname='ykval';
+$dbname=getenv('YKVAL_DB_NAME');
 $dbserver = getenv('MYSQL_HOST');
 $dbport = getenv('MYSQL_PORT');
 $dbtype='mysql';

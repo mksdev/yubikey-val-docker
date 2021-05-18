@@ -10,6 +10,8 @@ services:
             MYSQL_PORT: ${MYSQL_VAL_PORT}
             MYSQL_ROOT_USER: ${MYSQL_VAL_ROOT_USER}
             MYSQL_ROOT_PASSWORD: ${MYSQL_VAL_ROOT_PASSWORD}
+            YKVAL_DB_NAME: ${YKVAL_DB_NAME}
+            YKVAL_VERIFIER_DB_NAME: ${YKVAL_VERIFIER_DB_NAME}
             YKVAL_VERIFIER_DB_PASSWORD: ${YKVAL_VERIFIER_DB_PASSWORD}
             TZ: ${TZ}
         networks:
